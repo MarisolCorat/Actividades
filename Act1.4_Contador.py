@@ -38,6 +38,7 @@ textocont.grid(row=0,column=0, padx=10, pady=10, ipady = 4)
 #Se coloca frameCont para colocar las etiquetas dentro del frame.
 #text = texto de la etiqueta "contador"
 
+#CREACIÓN LineEdit que comienza en 0 y no puede ser modificada por el usuario(Solo lectura)
 campo= Entry (frameCont, state="readonly", textvariable=campoNum, justify = "center", width = 10, font= ("TkFixedFont",10))
 campo.grid(row=0 , column=1, padx=10, pady=0, ipady= 4)
 
