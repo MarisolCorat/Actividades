@@ -14,8 +14,11 @@ ventana.config(bg="pink") #color de fonde de la ventana
 #CREACIÓN DE LAS FUNCIONES. UNA PARA CADA OPERACIÓN
 
 def Suma():
-    numero1= int(num1.get()) #ingreso del valor 1
-    numero2= int(num2.get()) #ingreso del valor 2
+    #cambiar todos los tipos de int a float para los numeros que ingresa el usuario, sino no puedes operar con numeros no enteros
+    numero1= float(num1.get()) #ingreso del valor 1
+    numero2= float(num2.get()) #ingreso del valor 2
+    # numero1= int(num1.get()) #ingreso del valor 1
+    # numero2= int(num2.get()) #ingreso del valor 2
     resultado = numero1 + numero2
     resultadovar.set(resultado) #variable para mostrar el resultado
 
