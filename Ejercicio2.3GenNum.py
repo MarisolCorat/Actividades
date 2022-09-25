@@ -1,5 +1,6 @@
 #Actividad 2.3 GENERADOR DE NÚMEROS ALEATRORIOS ENTRE UN RANGO ESTABLECIDO
 
+from faulthandler import disable
 from tkinter import *
 from tkinter import ttk
 import tkinter as tk
@@ -45,9 +46,11 @@ etiqueta3 = Label(frameGenerador, text = "Número generado ", font= ("TkFixedFon
 etiqueta3.grid(row=2,column =0,padx=7,pady=7, ipady = 10 )
 
 #CREACIÓN DE SPINBOX (el spinbox es un campo numérico que tiene flechitas que pueden aumentar o disminuir el número al presionarla)
-n1 = Spinbox(frameGenerador, from_=0,to=100,width=20,borderwidth =3,relief="groove")
+#se añade el state="readonly" para todos los campos ya que los números deben gestionarse desde los spinbox unicamente, sin esta validación el usuario podía ingresar
+#manualmente los números, no cumpliendo con la consigna del ejercicio
+n1 = Spinbox(frameGenerador, from_=0,to=100,width=20,borderwidth =3,relief="groove",state="readonly")
 n1.grid(row = 0, column = 1)
-n2 = Spinbox(frameGenerador, from_=0,to=100,width=20,borderwidth =3,relief="groove")
+n2 = Spinbox(frameGenerador, from_=0,to=100,width=20,borderwidth =3,relief="groove",state="readonly")
 n2.grid(row = 1, column = 1)
 ResultadoGen = Entry(frameGenerador, state="readonly", textvariable=resultado, width = 25, borderwidth= 4, relief = "ridge")
 ResultadoGen.grid(row = 2, column = 1)
