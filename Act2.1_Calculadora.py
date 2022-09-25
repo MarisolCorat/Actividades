@@ -1,4 +1,3 @@
-#Actividad 2.1 Calculadora
 
 from __future__ import division
 from tkinter import *
@@ -8,6 +7,9 @@ import tkinter as tk
 #CREACIÓN DE LA VENTANA
 ventana = Tk()
 ventana.geometry("400x250")
+#fijamos los valores para que el usuario no extienda ni achique demasiado la ventana.
+ventana.minsize(400,250) 
+ventana.maxsize(400,250)
 ventana.title("Calculadora")
 ventana.config(bg="grey")
 
@@ -19,10 +21,17 @@ frameCalcu.place(relx= 0.5, rely=0.5, anchor=CENTER) #centra el frame para que s
 #CREACIÓN DE LAS FUNCIONES PARA LAS DIFERENTES OPERACIONES:
 
 def Suma():
-    numero1= int(num1.get())
-    numero2= int(num2.get())
+    #no admite valores con coma
+    # numero1= int(num1.get())
+    # numero2= int(num2.get())
+    # resultado = numero1 + numero2
+    # resultadovar.set(resultado)
+    #correccion
+    numero1= float(num1.get()) 
+    numero2= float(num2.get())
     resultado = numero1 + numero2
     resultadovar.set(resultado)
+
 
 def Resta():
     numero1= int(num1.get())
