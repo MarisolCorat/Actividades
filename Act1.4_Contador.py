@@ -7,6 +7,10 @@ import tkinter as tk
 #CREACIÓN DE LA VENTANA
 ventana = Tk()
 ventana.geometry("600x200")
+#fijamos los valores para que el usuario no extienda ni achique demasiado la ventana.
+ventana.minsize(600, 200) 
+ventana.maxsize(600, 200) 
+
 ventana.title("Contador")
 ventana.config(bg="grey")
 
@@ -56,3 +60,4 @@ boton3.grid(row=0, column=5, padx=10, pady=0)
 
 
 ventana.mainloop()
+
