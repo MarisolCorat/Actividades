@@ -3,6 +3,7 @@
 from tkinter import *
 from tkinter import ttk
 import tkinter as tk
+from tkinter import messagebox
 
 #CREACIÓN DE LA VENTANA
 ventana = Tk()
@@ -17,8 +18,14 @@ framePeli.place(relx= 0.5, rely=0.5, anchor=CENTER, width=500, height=350) #widt
 #CREACIÓN DE LA FUNCIÓN PARA AÑADIR EL TÍTULO DE UNA PELÍCULA A UNA LISTA
 def Peliculas():
     a = peli.get()
-    listaPeli.insert(END,a)
-    peli.delete(0,END)
+    # entrada=input()
+    #VALIDACION PARA QUE NO INGRESE CADENAS VACÍAS EN EL LISTBOX
+    if (a.isspace() or len(a) <= 1):
+        messagebox.showinfo(message="El nombre de la película no debe comenzar con un espacio", title="Error")
+    else:
+        listaPeli.insert(END,a)
+        peli.delete(0,END)
+
 
 #CONVERTIR VARIABLES PARA QUE SE VEAN EN ENTRY EN VARIABLE TIPO CADENA 
 peli=StringVar()
